@@ -1,0 +1,5 @@
+video {
+  max-width: 100%;
+  width: 480px;
+  filter: grayscale(1) contrast(1.2);
+}

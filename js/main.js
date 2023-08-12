@@ -2,6 +2,7 @@
 
 const mediaStreamConstrains = {
   video: true,
+  audio: true
 };
 
 const localVideo = document.querySelector('video');
