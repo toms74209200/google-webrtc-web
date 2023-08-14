@@ -28,7 +28,7 @@ const gotLocalMediaStream = mediaStream => {
 }
 
 // Handles error by logging a message to the console with the error message.
-const handleLocalMesiaStreamError = error => {
+const handleLocalMediaStreamError = error => {
   console.log('navigator.getUserMedia error: ', error);
 }
 
