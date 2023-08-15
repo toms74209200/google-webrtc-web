@@ -125,11 +125,11 @@ const createdOffer = description => {
 
   console.log('remotePeerConnection createAnswer start.');
   remotePeerConnection.createAnswer()
-    .then(createAnswer)
+    .then(createdAnswer)
     .catch(setSessionDescriptionError);
 }
 
-const createAnswer = description => {
+const createdAnswer = description => {
   console.log(`Answer from remotePeerConnection:\n${description.sdp}.`);
 
   console.log('remotePeerConnection setLocalDescription start.');
