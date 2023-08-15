@@ -139,7 +139,7 @@ const createAnswer = description => {
     }).catch(setSessionDescriptionError);
 
   console.log('localPeerConnection setRemoteDescriptionStart.');
-  localPeerConnection.setRemoteDescription(localPeerConnection)
+  localPeerConnection.setRemoteDescription(description)
     .then(() => {
       setRemoteDescriptionSuccess(localPeerConnection);
     }).catch(setSessionDescriptionError);
