@@ -95,13 +95,13 @@ const setSessionDescriptionError = error => {
   console.log(`Failed to create session description: ${error.toString()}`);
 }
 
-const setLocalDesctiptionSuccess = (peerConnection, functionName) => {
+const setDescriptionSuccess = (peerConnection, functionName) => {
   const peerName = getPeerName(peerConnection);
   console.log(`${peerName} ${functionName} complete.`)
 }
 
 const setLocalDescriptionSuccess = peerConnection => {
-  setLocalDescriptionSuccess(peerConnection, 'setLocalDescription');
+  setDescriptionSuccess(peerConnection, 'setLocalDescription');
 }
 
 const setRemoteDescriptionSuccess = peerConnection => {
@@ -115,6 +115,12 @@ const createdOffer = description => {
   localPeerConnection.setLocalDescription(description)
     .then(() => {
       setLocalDescriptionSuccess(localPeerConnection);
+    }).catch(setSessionDescriptionError);
+
+  console.log('remotePeerConnection setRemoteDesctiption start.');
+  remotePeerConnection.setRemoteDescription(description)
+    .then(() => {
+      setRemoteDescriptionSuccess(remotePeerConnection);
     }).catch(setSessionDescriptionError);
 
   console.log('remotePeerConnection createAnswer start.');
